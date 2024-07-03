@@ -181,33 +181,6 @@
             </div>
         </footer>
     </div>
-
-    <script>
-        // Set the current year in the footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        flatpickr("#date", {
-            minDate: "today",
-            dateFormat: "d.m.Y",
-            locale: "cs"
-        });
-
-        document.getElementById('specialistForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Collect form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            
-            // Here you would typically send this data to your server
-            // For this example, we'll just log it to the console
-            console.log('Odeslaný formulář:', data);
-            
-            // You can add code here to send the data via email or to a server endpoint
-            alert('Děkujeme! Váš požadavek byl odeslán.');
-            this.reset();
-        });
-    </script>
     <script>
     document.getElementById('specialistForm').addEventListener('submit', function(e) {
   if(!document.getElementById('consent').checked) {
