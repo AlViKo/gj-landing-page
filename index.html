@@ -124,16 +124,31 @@ document.getElementById('specialistForm').addEventListener('submit', function(e)
     return;
   }
 
-  const formData = new FormData(this);
-  
-  fetch(this.action, {
+  var formData = {
+    firstName: document.getElementById('firstName').value,
+    lastName: document.getElementById('lastName').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+    category: document.getElementById('category').value,
+    date: document.getElementById('date').value,
+    consent: document.getElementById('consent').checked
+  };
+
+  fetch('https://script.google.com/macros/s/AKfycbxanof30kosF3R4dK6sRaTWBa9Ak0MAV_CrnIuXHBN3UPgcL9cDcGNxlfYJaozdR0yfuQ/exec', {
     method: 'POST',
-    body: formData,
-    mode: 'no-cors'
+    body: JSON.stringify(formData),
+    headers: {
+      'Content-Type': 'application/json'
+    }
   })
-  .then(response => {
-    alert('Děkujeme! Váš požadavek byl odeslán.');
-    this.reset();
+  .then(response => response.json())
+  .then(data => {
+    if(data.result === "success") {
+      alert('Děkujeme! Váš požadavek byl odeslán.');
+      this.reset();
+    } else {
+      throw new Error('Submission failed');
+    }
   })
   .catch(error => {
     console.error('Error:', error);
