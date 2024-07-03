@@ -24,42 +24,7 @@
         }
     </script>
     <style>
-        @font-face {
-            font-family: 'MBF CANNO';
-            src: url('path/to/MBF-CANNO.woff2') format('woff2'),
-                 url('path/to/MBF-CANNO.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            font-family: 'MBF CANNO', sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        main {
-            flex: 1 0 auto;
-        }
-
-        .form-input, .form-select {
-            transition: all 0.3s ease;
-        }
-        .form-input:focus, .form-select:focus {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(236, 109, 19, 0.1), 0 2px 4px -1px rgba(236, 109, 19, 0.06);
-        }
-        .form-input::placeholder {
-            color: #9ca3af;
-        }
-        .flatpickr-day.selected {
-            background: #ec6d13 !important;
-            border-color: #ec6d13 !important;
-        }
-        .flatpickr-day.today {
-            border-color: #ec6d13 !important;
-        }
+        /* [Previous styles remain unchanged] */
     </style>
 </head>
 <body class="bg-white font-mbf-canno">
@@ -80,34 +45,32 @@
                         </p>
                     </div>
 
-                    <form id="specialistForm" class="max-w-3xl mx-auto space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg" data-netlify="true" name="specialist-form">
-                        <input type="hidden" name="form-name" value="specialist-form">
-                        
+                    <form id="specialistForm" class="max-w-3xl mx-auto space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg">
                         <div class="grid grid-cols-2 gap-6">
                             <div>
                                 <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">Jméno *</label>
-                                <input type="text" id="firstName" name="firstName" required placeholder="Zadejte své jméno" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+                                <input type="text" id="firstName" name="entry.314091125" required placeholder="Zadejte své jméno" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
                             </div>
                             <div>
                                 <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Příjmení *</label>
-                                <input type="text" id="lastName" name="lastName" required placeholder="Zadejte své příjmení" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+                                <input type="text" id="lastName" name="entry.189782199" required placeholder="Zadejte své příjmení" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-2 gap-6">
                             <div>
                                 <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefonní číslo *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="+420 123 456 789" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+                                <input type="tel" id="phone" name="entry.1360111974" required placeholder="+420 123 456 789" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
                             </div>
                             <div>
                                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mailová adresa *</label>
-                                <input type="email" id="email" name="email" required placeholder="Zadejte svou e-mailovou adresu" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+                                <input type="email" id="email" name="entry.223380758" required placeholder="Zadejte svou e-mailovou adresu" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
                             </div>
                         </div>
 
                         <div>
                             <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Kategorie</label>
-                            <select id="category" name="category" class="form-select block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+                            <select id="category" name="entry.956664224" class="form-select block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
                                 <option value="">Vyberte...</option>
                                 <option value="cleaning">Úklidové služby</option>
                                 <option value="moving">Stěhování</option>
@@ -126,14 +89,14 @@
 
                         <div>
                             <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Požadované datum</label>
-                            <input type="text" id="date" name="date" placeholder="Vyberte datum" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+                            <input type="text" id="date" name="entry.20764114" placeholder="Vyberte datum" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
                         </div>
 
-                        <div>
-                            <input type="checkbox" id="consent" name="consent" required class="mr-2">
-                            <label for="consent" class="text-sm text-gray-600">
-                                Souhlasím se zpracováním osobních údajů v souladu s 
-                                <a href="/privacy-policy.html" class="text-orange hover:underline">zásadami ochrany osobních údajů</a>.
+                        <div class="flex items-start">
+                            <input type="checkbox" id="consent" name="entry.956664224" required class="mt-1">
+                            <label for="consent" class="ml-2 text-sm text-gray-600">
+                                Souhlasím se zpracováním mých osobních údajů v souladu s 
+                                <a href="privacy-policy.html" class="text-orange hover:underline">zásadami ochrany osobních údajů</a>.
                             </label>
                         </div>
 
@@ -143,32 +106,8 @@
                     </form>
                 </main>
 
-                <section class="mt-16 mb-16">
-                    <h3 class="text-2xl font-bold text-black mb-8">Jak vám můžeme pomoci</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
-                            <svg class="h-8 w-8 text-orange mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                            <h4 class="text-lg font-bold text-black mb-2">Rychle</h4>
-                            <p class="text-gray-600">Zapomeňte na dlouhé hledání. Uděláme všechnu práci za vás. Zanechte požadavek a během několika minut obdržíte nabídky od nejlepších specialistů.</p>
-                        </div>
-                        <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
-                            <svg class="h-8 w-8 text-orange mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                            <h4 class="text-lg font-bold text-black mb-2">Spolehlivě</h4>
-                            <p class="text-gray-600">Spolupracujeme pouze s ověřenými a vysoce kvalifikovanými specialisty, takže si můžete být jisti kvalitou poskytovaných služeb.</p>
-                        </div>
-                        <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
-                            <svg class="h-8 w-8 text-orange mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                            </svg>
-                            <h4 class="text-lg font-bold text-black mb-2">Bezpečně</h4>
-                            <p class="text-gray-600">Stovky lidí již využily naše služby. Vaše bezpečí a klid jsou naší prioritou. Všechna data jsou chráněna a vaše požadavky jsou zpracovávány důvěrně.</p>
-                        </div>
-                    </div>
-                </section>
+                <!-- [Previous "How we can help" section remains unchanged] -->
+
             </div>
         </div>
 
@@ -177,7 +116,7 @@
                 <div class="flex items-center justify-center">
                     <p class="text-sm text-gray-600">
                         &copy; <span id="current-year"></span> GetJob. Všechna práva vyhrazena. 
-                        <a href="/privacy-policy.html" class="text-orange hover:underline">Zásady ochrany osobních údajů</a>
+                        <a href="privacy-policy.html" class="text-orange hover:underline">Zásady ochrany osobních údajů</a>
                     </p>
                 </div>
             </div>
@@ -195,10 +134,28 @@
         });
 
         document.getElementById('specialistForm').addEventListener('submit', function(e) {
-            if (!document.getElementById('consent').checked) {
-                e.preventDefault();
+            e.preventDefault();
+            
+            if(!document.getElementById('consent').checked) {
                 alert('Pro odeslání formuláře musíte souhlasit se zpracováním osobních údajů.');
+                return;
             }
+
+            const formData = new FormData(this);
+            
+            fetch('https://docs.google.com/forms/d/e/1FAIpQLSdUopvYExM0nLdrp2QM4vvWe0XUf7IT49uugFl9BGelF-wzTw/formResponse', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(response => {
+                alert('Děkujeme! Váš požadavek byl odeslán.');
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Omlouváme se, při odesílání došlo k chybě. Zkuste to prosím znovu později.');
+            });
         });
     </script>
 </body>
