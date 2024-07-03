@@ -83,7 +83,7 @@
                         </p>
                     </div>
 
-                    <form id="specialistForm" action="https://formspree.io/f/mvgpoqke" method="POST" class="max-w-3xl mx-auto space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg" data-netlify="true">
+                    <form id="specialistForm" class="max-w-3xl mx-auto space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg">
                         <input type="hidden" name="form-name" value="specialistForm">
                         
                         <div class="grid grid-cols-2 gap-6">
@@ -142,6 +142,9 @@
                         </p>
                         <input type="hidden" name="_next" value="https://alviko.github.io/gj-landing-page/thank-you.html">
                         <input type="text" name="_gotcha" style="display:none">
+                        <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-xl">
+                            Váš požadavek jsme obdrželi. Náš manažer se vám během několika hodin ozve.
+                        </div>
                     </form>
                 </main>
 
@@ -185,10 +188,11 @@
         </footer>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     // Keep your existing Flatpickr initialization here
 
     var form = document.getElementById('specialistForm');
+    var successMessage = document.getElementById('successMessage');
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -208,8 +212,9 @@
             }
         }).then(response => {
             if (response.ok) {
-                alert('Váš požadavek jsme obdrželi. Náš manažer se vám během několika hodin ozve.');
                 form.reset();
+                form.style.display = 'none';
+                successMessage.classList.remove('hidden');
             } else {
                 throw new Error('Něco se pokazilo. Zkuste to prosím znovu.');
             }
