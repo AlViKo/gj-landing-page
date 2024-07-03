@@ -1,76 +1,34 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GetJob - Najděte svého specialistu</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/cs.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        orange: '#ec6d13',
-                        'orange-light': '#ff8c3b',
-                    },
-                    fontFamily: {
-                        'mbf-canno': ['MBF CANNO', 'sans-serif'],
-                    },
-                },
-            },
-        }
-    </script>
-    <style>
-        /* [Previous styles remain unchanged] */
-    </style>
-</head>
-<body class="bg-white font-mbf-canno">
-    <div class="flex flex-col min-h-screen">
-        <div class="flex-grow">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <header class="flex items-center py-6 border-b border-gray-200">
-                    <div class="flex items-center">
-                        <h1 class="text-xl font-bold text-black">GetJob</h1>
-                    </div>
-                </header>
+I apologize for the confusion. You're right, let's take a step back and return to the design from option 14. I'll provide the HTML for the form section with the original design, and we'll work from there to ensure functionality.
 
-                <main class="mt-10">
-                    <div class="text-center">
-                        <h2 class="text-4xl font-black text-black mb-4">Uděláme všechnu práci za vás</h2>
-                        <p class="text-lg text-gray-600 mb-8">
-                            Naše služba vám pomůže rychle a bez zbytečných starostí najít odborníky v různých oblastech. Stačí zanechat požadavek a my se postaráme o to, abyste v co nejkratší době získali kvalifikovanou pomoc.
-                        </p>
-                    </div>
+Here's the form HTML based on option 14:
 
-                   <form id="specialistForm" class="max-w-3xl mx-auto space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg">
+```html
+<form id="specialistForm" class="max-w-3xl mx-auto space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg">
     <div class="grid grid-cols-2 gap-6">
         <div>
             <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">Jméno *</label>
-            <input type="text" id="firstName" name="entry.314091125" required placeholder="Zadejte své jméno" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+            <input type="text" id="firstName" name="firstName" required placeholder="Zadejte své jméno" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
         </div>
         <div>
             <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Příjmení *</label>
-            <input type="text" id="lastName" name="entry.189782199" required placeholder="Zadejte své příjmení" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+            <input type="text" id="lastName" name="lastName" required placeholder="Zadejte své příjmení" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
         </div>
     </div>
 
     <div class="grid grid-cols-2 gap-6">
         <div>
             <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefonní číslo *</label>
-            <input type="tel" id="phone" name="entry.1360111974" required placeholder="+420 123 456 789" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+            <input type="tel" id="phone" name="phone" required placeholder="+420 123 456 789" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
         </div>
         <div>
             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mailová adresa *</label>
-            <input type="email" id="email" name="entry.223380758" required placeholder="Zadejte svou e-mailovou adresu" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+            <input type="email" id="email" name="email" required placeholder="Zadejte svou e-mailovou adresu" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
         </div>
     </div>
 
     <div>
         <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Kategorie</label>
-        <select id="category" name="entry.956664224" class="form-select block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+        <select id="category" name="category" class="form-select block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
             <option value="">Vyberte...</option>
             <option value="cleaning">Úklidové služby</option>
             <option value="moving">Stěhování</option>
@@ -89,72 +47,21 @@
 
     <div>
         <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Požadované datum</label>
-        <input type="text" id="date" name="entry.20764114" placeholder="Vyberte datum" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+        <input type="text" id="date" name="date" placeholder="Vyberte datum" class="form-input block w-full rounded-xl border-gray-300 shadow-sm focus:border-orange focus:ring focus:ring-orange focus:ring-opacity-50 bg-white h-12 px-4">
+    </div>
+
+    <div class="flex items-start">
+        <input type="checkbox" id="consent" name="consent" required class="mt-1">
+        <label for="consent" class="ml-2 text-sm text-gray-600">
+            Souhlasím se zpracováním mých osobních údajů v souladu s 
+            <a href="privacy-policy.html" class="text-orange hover:underline">zásadami ochrany osobních údajů</a>.
+        </label>
     </div>
 
     <button type="submit" class="w-full bg-orange text-white font-bold py-4 px-4 rounded-xl hover:bg-orange-light transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange focus:ring-opacity-50">
         Odeslat
     </button>
 </form>
-                </main>
+```
 
-                <!-- [Previous "How we can help" section remains unchanged] -->
-
-            </div>
-        </div>
-
-        <footer class="bg-gray-100 py-4 mt-auto">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-center">
-                    <p class="text-sm text-gray-600">
-                        &copy; <span id="current-year"></span> GetJob. Všechna práva vyhrazena. 
-                        <a href="privacy-policy.html" class="text-orange hover:underline">Zásady ochrany osobních údajů</a>
-                    </p>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-<script>
-document.getElementById('specialistForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  if(!document.getElementById('consent').checked) {
-    alert('Pro odeslání formuláře musíte souhlasit se zpracováním osobních údajů.');
-    return;
-  }
-
-  var formData = {
-    firstName: document.getElementById('firstName').value,
-    lastName: document.getElementById('lastName').value,
-    phone: document.getElementById('phone').value,
-    email: document.getElementById('email').value,
-    category: document.getElementById('category').value,
-    date: document.getElementById('date').value,
-    consent: document.getElementById('consent').checked
-  };
-
-  fetch('https://script.google.com/macros/s/AKfycbxanof30kosF3R4dK6sRaTWBa9Ak0MAV_CrnIuXHBN3UPgcL9cDcGNxlfYJaozdR0yfuQ/exec', {
-    method: 'POST',
-    body: JSON.stringify(formData),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(response => response.json())
-  .then(data => {
-    if(data.result === "success") {
-      alert('Děkujeme! Váš požadavek byl odeslán.');
-      this.reset();
-    } else {
-      throw new Error('Submission failed');
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    alert('Omlouváme se, při odesílání došlo k chybě. Zkuste to prosím znovu později.');
-  });
-});
-</script>
-</body>
-</html>
+This form maintains the original design and structure from option 14. The next step would be to implement the form submission functionality. Let me know if you want to proceed with connecting this form to a backend service or if you have any other specific requirements for form submission.
