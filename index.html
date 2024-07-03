@@ -199,12 +199,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     var form = document.getElementById('specialistForm');
+    var consentCheckbox = document.getElementById('consent');
     
     form.addEventListener('submit', function(e) {
         console.log('Form submitted');
         e.preventDefault();
         
-        if(!document.getElementById('consent').checked) {
+        if(consentCheckbox && !consentCheckbox.checked) {
             alert('Pro odeslání formuláře musíte souhlasit se zpracováním osobních údajů.');
             return;
         }
