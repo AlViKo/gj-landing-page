@@ -61,6 +61,9 @@
             border-color: #ec6d13 !important;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/cs.js"></script>
 </head>
 <body class="bg-white font-mbf-canno">
     <div class="flex flex-col min-h-screen">
@@ -182,12 +185,13 @@
         </footer>
     </div>
     <script>
-    document.getElementById('specialistForm').addEventListener('submit', function(e) {
-  if(!document.getElementById('consent').checked) {
-    e.preventDefault();
-    alert('Pro odeslání formuláře musíte souhlasit se zpracováním osobních údajů.');
-  }
-});
-</script>
+        document.addEventListener('DOMContentLoaded', function() {
+        flatpickr("#date", {
+        minDate: "today",
+        dateFormat: "d.m.Y",
+        locale: "cs"
+         });
+        });
+    </script>
 </body>
 </html>
