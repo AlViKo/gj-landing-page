@@ -189,11 +189,15 @@
     </div>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-    // Keep your existing Flatpickr initialization here
+    // Initialize Flatpickr
+    flatpickr("#date", {
+        minDate: "today",
+        dateFormat: "d.m.Y",
+        locale: "cs"
+    });
 
     var form = document.getElementById('specialistForm');
-    var successMessage = document.getElementById('successMessage');
-
+    
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -204,22 +208,29 @@
 
         var formData = new FormData(form);
         
-        fetch('https://formspree.io/f/mvgpoqke', {
+        fetch('https://formspree.io/f/YOUR_FORM_ID', {
             method: 'POST',
             body: formData,
             headers: {
                 'Accept': 'application/json'
             }
-        }).then(response => {
-            if (response.ok) {
+        }).then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                alert('Váš požadavek jsme obdrželi. Náš manažer se vám během několika hodin ozve.');
                 form.reset();
-                form.style.display = 'none';
-                successMessage.classList.remove('hidden');
+                // Reinitialize Flatpickr after form reset
+                flatpickr("#date", {
+                    minDate: "today",
+                    dateFormat: "d.m.Y",
+                    locale: "cs"
+                });
             } else {
                 throw new Error('Něco se pokazilo. Zkuste to prosím znovu.');
             }
         }).catch(error => {
-            alert(error.message);
+            console.error('Error:', error);
+            alert('Omlouváme se, při odesílání došlo k chybě. Zkuste to prosím znovu později.');
         });
     });
 });
