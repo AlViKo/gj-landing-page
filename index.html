@@ -80,7 +80,7 @@
                         </p>
                     </div>
 
-                    <form id="specialistForm" class="max-w-3xl mx-auto space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg" data-netlify="true">
+                    <form id="specialistForm" action="https://formspree.io/f/Yvgpoqke" method="POST" class="max-w-3xl mx-auto space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg" data-netlify="true">
                         <input type="hidden" name="form-name" value="specialistForm">
                         
                         <div class="grid grid-cols-2 gap-6">
@@ -137,6 +137,8 @@
                             Kliknutím na tlačítko odeslat souhlasíte s <br>
                             <a href="#" class="text-orange hover:underline">podmínkami naší služby</a>
                         </p>
+                        <input type="hidden" name="_next" value="https://alviko.github.io/Ygj-landing-page/thank-you.html">
+                        <input type="text" name="_gotcha" style="display:none">
                     </form>
                 </main>
 
@@ -206,5 +208,13 @@
             this.reset();
         });
     </script>
+    <script>
+    document.getElementById('specialistForm').addEventListener('submit', function(e) {
+  if(!document.getElementById('consent').checked) {
+    e.preventDefault();
+    alert('Pro odeslání formuláře musíte souhlasit se zpracováním osobních údajů.');
+  }
+});
+</script>
 </body>
 </html>
